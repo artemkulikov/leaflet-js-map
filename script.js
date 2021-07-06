@@ -2,7 +2,7 @@ var map = L.map('map').setView([50.457619, 30.526416], 11);
 
 var locationsAnri = [
     // anri
-    ["Аптека \"Анрі-Фарм\" <br> вулиця Осіння, 33, Київ, 03164", 50.466699117686616, 30.34806101488652],
+    [" Аптека \"Анрі-Фарм\" <br> вулиця Осіння, 33, Київ, 03164", 50.466699117686616, 30.34806101488652],
     ["Аптека \"Анрі-Фарм\" <br> проспект Свободи, 2Д, Київ, 04108", 50.5052674229508, 30.438224204929856],
     ["Аптека \"Анрі-Фарм\" <br> Харківське шосе, 19, Київ, 02090", 50.43183856412183, 30.63425527609167],
     ["Аптека \"Анрі-Фарм\" <br> вулиця Миколи Закревського, 95В, Київ, 02232", 50.53010760081691, 30.623075945410942],
@@ -79,16 +79,16 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/
 var pinAnri = L.icon({
     iconUrl: 'anri-pin.svg',
 
-    iconSize:     [36, 40], // size of the icon
-    iconAnchor:   [22, 38], // point of the icon which will correspond to marker's location
-    popupAnchor:  [-3, -40] // point from which the popup should open relative to the iconAnchor
+    iconSize:     [43, 47], // size of the icon
+    iconAnchor:   [29, 45], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-6, -40] // point from which the popup should open relative to the iconAnchor
 });
 var pinApg = L.icon({
     iconUrl: 'apg-pin.svg',
 
-    iconSize:     [36, 40],
-    iconAnchor:   [22, 38], 
-    popupAnchor:  [-3, -40]
+    iconSize:     [43, 47],
+    iconAnchor:   [29, 45], 
+    popupAnchor:  [-6, -40]
 });
 
 for (var i = 0; i < locationsAnri.length; i++) {
