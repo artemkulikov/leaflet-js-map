@@ -87,7 +87,7 @@ var pinApg = L.icon({
     iconUrl: 'apg-pin.svg',
 
     iconSize:     [43, 47],
-    iconAnchor:   [29, 36], 
+    iconAnchor:   [25, 36], 
     popupAnchor:  [-6, -40]
 });
 
