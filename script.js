@@ -1,4 +1,4 @@
-var map = L.map('map').setView([50.448619, 30.526416], 11);
+var map = L.map('map').setView([50.448619, 30.526416], 11.5);
 
 var locationsAnri = [
     // anri
