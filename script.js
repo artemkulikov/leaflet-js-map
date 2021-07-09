@@ -1,4 +1,4 @@
-var map = L.map('map').setView([50.448619, 30.526416], 11.5);
+var map = L.map('map').setView([50.448619, 30.540416], 11.5);
 
 var locationsAnri = [
     // anri
@@ -81,14 +81,14 @@ var pinAnri = L.icon({
 
     iconSize:     [43, 47], // size of the icon
     iconAnchor:   [25, 36], // point of the icon which will correspond to marker's location
-    popupAnchor:  [-6, -40] // point from which the popup should open relative to the iconAnchor
+    popupAnchor:  [-3, -37] // point from which the popup should open relative to the iconAnchor
 });
 var pinApg = L.icon({
     iconUrl: 'apg-pin.svg',
 
     iconSize:     [43, 47],
     iconAnchor:   [25, 36], 
-    popupAnchor:  [-6, -40]
+    popupAnchor:  [-3, -37]
 });
 
 for (var i = 0; i < locationsAnri.length; i++) {
