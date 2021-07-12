@@ -111,7 +111,7 @@ for (var i = 0; i < locationsAnri.length; i++) {
     let phoneNum = locationsAnri[i][8];
 
     marker = new L.marker([geoX, geoY], {icon: pinAnri})
-      .bindPopup('<a class="map__link" href="' + geoLink + '"> <img class="popUpImg" src="' + imgLink + '">' + brand + '<br>' + address + ' <br> Графік роботи: ' + workTime + ' </a>' + '<a class="map__link tel__link" href="tel:+38'+ telNum +'">' + 'Телефон: ' +  phoneNum + '</a>')
+      .bindPopup('<a target="_blank" class="map__link" href="' + geoLink + '"> <img class="popUpImg" src="' + imgLink + '">' + brand + '<br>' + address + ' <br> Графік роботи: ' + workTime + ' </a>' + '<a class="map__link tel__link" href="tel:+38'+ telNum +'">' + 'Телефон: ' +  phoneNum + '</a>')
       .addTo(map1);
   }
   
@@ -129,7 +129,7 @@ for (var i = 0; i < locationsApg.length; i++) {
     let phoneNum = locationsAnri[i][8];
 
     marker = new L.marker([geoX, geoY], {icon: pinApg})
-      .bindPopup('<a class="map__link apg" href="' + geoLink + '"> <img class="popUpImg" src="' + imgLink + '">' + brand + '<br>' + address + ' <br> Години роботи: ' + workTime + ' </a>' + '<a class="map__link tel__link apg" href="tel:+38'+ telNum +'">' + 'Телефон: ' +  phoneNum + '</a>')
+      .bindPopup('<a target="_blank" class="map__link apg" href="' + geoLink + '"> <img class="popUpImg" src="' + imgLink + '">' + brand + '<br>' + address + ' <br> Години роботи: ' + workTime + ' </a>' + '<a class="map__link tel__link apg" href="tel:+38'+ telNum +'">' + 'Телефон: ' +  phoneNum + '</a>')
       .addTo(map1);
 }
 
