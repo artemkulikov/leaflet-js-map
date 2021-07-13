@@ -84,14 +84,14 @@ var pinAnri = L.icon({
 
     iconSize:     [43, 47], // size of the icon
     iconAnchor:   [25, 36], // point of the icon which will correspond to marker's location
-    popupAnchor:  [-3, -17] // point from which the popup should open relative to the iconAnchor
+    popupAnchor:  [-3, -32] // point from which the popup should open relative to the iconAnchor
 });
 var pinApg = L.icon({
     iconUrl: 'img/apg-pin.svg',
 
     iconSize:     [43, 47],
     iconAnchor:   [25, 36], 
-    popupAnchor:  [-3, -17]
+    popupAnchor:  [-3, -32]
 });
 
 
