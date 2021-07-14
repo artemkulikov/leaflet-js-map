@@ -1,8 +1,6 @@
 var map = L.map('map').setView([50.448619, 30.540416], 12);
 
-// add location control to global name space for testing only
-// on a production site, omit the "lc = "!
-lc = L.control.locate({
+L.control.locate({
   strings: {
       title: "Show me where I am, yo!"
   }
@@ -93,16 +91,16 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/
 var pinAnri = L.icon({
     iconUrl: 'img/anri-pin.svg',
 
-    iconSize:     [43, 47], // size of the icon
-    iconAnchor:   [25, 36], // point of the icon which will correspond to marker's location
-    popupAnchor:  [-3, -17] // point from which the popup should open relative to the iconAnchor
+    iconSize:     [43, 47],
+    iconAnchor:   [25, 36],
+    popupAnchor:  [-3, -30]
 });
 var pinApg = L.icon({
     iconUrl: 'img/apg-pin.svg',
 
     iconSize:     [43, 47],
     iconAnchor:   [25, 36], 
-    popupAnchor:  [-3, -17]
+    popupAnchor:  [-3, -30]
 });
 
 
@@ -156,8 +154,6 @@ searchControl.on('results', function(data){
 });
 
 setTimeout(function(){$('.pointer').fadeOut('slow');},3400);
-
-//---------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
