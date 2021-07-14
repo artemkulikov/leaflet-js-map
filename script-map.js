@@ -1,4 +1,12 @@
-var map1 = L.map('map1').setView([50.448619, 30.540416], 12);
+var map = L.map('map').setView([50.448619, 30.540416], 12);
+
+// add location control to global name space for testing only
+// on a production site, omit the "lc = "!
+lc = L.control.locate({
+  strings: {
+      title: "Show me where I am, yo!"
+  }
+}).addTo(map);
 
 
 var locationsAnri = [
@@ -47,7 +55,7 @@ var locationsAnri = [
     ['https://goo.gl/maps/LHyEVCztgr7Y2Eyk7', 'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека "Анрі-Фарм"', 'вулиця Балукова, 1 -Е, Крюківщина, Київська обл., 08977', ' цілодобово ', 50.37446966391583, 30.375417133401893, '0507300018'],
     ['https://goo.gl/maps/bVzCXn2dVcT4AcDT8', 'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека "Анрі-Фарм"', 'вулиця Семьи Кульженкив, 37, Київ, 02000', ' цілодобово ', 50.52070462007844, 30.46680868610183, '0504581557'],
     ['https://goo.gl/maps/YDQaqQHRZbeXMe8w7', 'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека "Анрі-Фарм"', 'вулиця Садовая, 1, Новосілки, Київська обл., 03027', ' цілодобово ', 50.34773463369959, 30.449387625131052, '0504581548'],//45 не нашло на картах
-    ['https://goo.gl/maps/pLERBZaANbknqm9p8', 'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека "Анрі-Фарм"', 'вулиця Петра Сагайдачного, 20А, Софіївська Борщагівка, Київська обл., 08131', ' цілодобово ', 50.38535344838777, 30.38172761775713, '0994200673'],
+    ['https://goo.gl/maps/ZP9s4Tg7sGo9JXrQ6', 'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека "Анрі-Фарм"', 'с.Святопетровське, ЖК "Петровский квартал", бульв. Шевченко Тараса, 9', ' цілодобово ', 50.39448437543025, 30.320035523569555, '0994200673'],
     ['https://goo.gl/maps/WXM64orSJMr7YrTg6', 'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека "Анрі-Фарм"', 'вулиця Жилянська, 59, Київ, 02000', ' цілодобово ', 50.437246180245616, 30.49967737578535, '0503672958'],
     ['https://goo.gl/maps/2q5CqqebsU1SisFt5', 'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека "Анрі-Фарм"', 'вулиця Воскресенська, 18, Київ, 02000', ' цілодобово ', 50.47024949796505, 30.602251649806963, '0503358942'],
     ['https://goo.gl/maps/uAFmbx4dc2xbavBN9', 'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека "Анрі-Фарм"', 'вулиця Андрія Аболмасова, 6, Київ, 02000', ' цілодобово ', 50.459286458445455, 30.585316749183246, '0503072993'],
@@ -63,8 +71,9 @@ var locationsAnri = [
     ['https://goo.gl/maps/T7HKDLWPuZDyzAKu6', 'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека "Анрі-Фарм"', 'вулиця Данила Щербаківського, 52, Київ, 02000', ' цілодобово ', 50.47061797026333, 30.406307256511496, '0504047482'],
     ['https://goo.gl/maps/DfZwUeDbpFY19GwH7', 'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека "Анрі-Фарм"', 'вулиця Петра Чаадаєва, 2, Київ, 02000', ' цілодобово ', 50.43475181602662, 30.37372219666808, '0503942778'],
     ['https://goo.gl/maps/MvMgExLtaK49TjQ17', 'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека "Анрі-Фарм"', 'проспект Мартинова, 1, Софіївська Борщагівка, Київська обл.', ' цілодобово ', 50.39887603286038, 30.392800289779654, '0503276614'], //63 не нашло на картах
-    ['https://goo.gl/maps/ZuwgrwgDJ6ddBE7n6', 'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека "Анрі-Фарм"', 'провулок Ясиноватский, 10, Киев, 03118', ' цілодобово ', 50.50319642462894, 30.42381330891969, '0950409500'], //64 не нашло на картах
+    ['https://goo.gl/maps/ZuwgrwgDJ6ddBE7n6', 'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека "Анрі-Фарм"', 'провулок Ясиноватский, 10, Київ, 03118', ' цілодобово ', 50.50319642462894, 30.42381330891969, '0950409500'], //64 не нашло на картах
     ['https://g.page/varshavsky',             'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека "Анрі-Фарм"', 'проспект Правди, 45-Б, Київ, 04108', ' цілодобово ', 50.50319642462894, 30.42381330891969, '0952409760'],
+    ['https://goo.gl/maps/skxCKmCHezW69ycbA', 'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека "Анрі-Фарм"', 'проспект Правди, буд 102 (Ашан), Київ', ' цілодобово ', 50.50826577219018, 30.404808177406885, '0504684645'],
 
   ];
 var locationsApg = [
@@ -75,23 +84,25 @@ var locationsApg = [
     ['https://goo.gl/maps/gEBACoaywp85ZiLn6', 'https://4197r62cmrjs32n9dndpi2o1-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/square-placeholder.jpg',  'Аптека APG pharmacy', 'вулиця Європейська, 2А, Крюківщина, Київська обл., 08136', ' 08:00–22:00 ', 50.37840922283909, 30.381034485321994, '0952391367'],
 ]
 
+
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png', {
     attribution: '<a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap</a>'
-}).addTo(map1);
+}).addTo(map);
+
 
 var pinAnri = L.icon({
     iconUrl: 'img/anri-pin.svg',
 
     iconSize:     [43, 47], // size of the icon
     iconAnchor:   [25, 36], // point of the icon which will correspond to marker's location
-    popupAnchor:  [-3, -32] // point from which the popup should open relative to the iconAnchor
+    popupAnchor:  [-3, -17] // point from which the popup should open relative to the iconAnchor
 });
 var pinApg = L.icon({
     iconUrl: 'img/apg-pin.svg',
 
     iconSize:     [43, 47],
     iconAnchor:   [25, 36], 
-    popupAnchor:  [-3, -32]
+    popupAnchor:  [-3, -17]
 });
 
 
@@ -110,7 +121,7 @@ for (var i = 0; i < locationsAnri.length; i++) {
 
     marker = new L.marker([geoX, geoY], {icon: pinAnri})
       .bindPopup('<a target="_blank" class="map__link" href="' + geoLink + '"> <img class="popUpImg" src="' + imgLink + '"><span>' + brand + '<br>' + address + ' <br> Графік роботи: ' + workTime + '</span> </a>' + '<a class="map__link tel__link" href="tel:+38'+ telLink +'">' + '<img class="tel__icon" src="img/iconmonstr-phone-3.svg"><strong>' +  phoneNum + '</strong></a>')
-      .addTo(map1);
+      .addTo(map);
   }
   
 
@@ -128,14 +139,14 @@ for (var i = 0; i < locationsApg.length; i++) {
 
     marker = new L.marker([geoX, geoY], {icon: pinApg})
       .bindPopup('<a target="_blank" class="map__link apg" href="' + geoLink + '"> <img class="popUpImg" src="' + imgLink + '">' + brand + '<br>' + address + ' <br> Години роботи: ' + workTime + ' </a>' + '<a class="map__link tel__link apg" href="tel:+38'+ telLink +'">' + '<img class="tel__icon" src="img/iconmonstr-phone-red.svg"> ' +  phoneNum + '</a>')
-      .addTo(map1);
+      .addTo(map);
 }
 
 
 
-var searchControl = new L.esri.Controls.Geosearch().addTo(map1);
+var searchControl = new L.esri.Controls.Geosearch().addTo(map);
 
-var results = new L.LayerGroup().addTo(map1);
+var results = new L.LayerGroup().addTo(map);
 
 searchControl.on('results', function(data){
   results.clearLayers();
@@ -146,6 +157,7 @@ searchControl.on('results', function(data){
 
 setTimeout(function(){$('.pointer').fadeOut('slow');},3400);
 
+//---------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -154,6 +166,3 @@ setTimeout(function(){$('.pointer').fadeOut('slow');},3400);
 
 
 
-
-
-   
